@@ -1,0 +1,100 @@
+let friendData = [
+{
+  "name":"Jerry Seinfeld",
+  "photo":"https://en.wikipedia.org/wiki/Jerry_Seinfeld",
+  "scores":[
+      5,
+      4,
+      3,
+      4,
+      2,
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+},
+{
+  "name":"Cosmo Krammer",
+  "photo":'https://en.wikipedia.org/wiki/Cosmo_Kramer',
+  "scores":[
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+},
+{
+  "name":"Elaine Marie Benes",
+  "photo":"https://en.wikipedia.org/wiki/Elaine_Benes",
+  "scores":[
+      4,
+      4,
+      3,
+      3,
+      5,
+      5,
+      2,
+      2,
+      1,
+      1
+    ]
+},
+{
+  "name":"George Costanza",
+  "photo":"https://en.wikipedia.org/wiki/George_Costanza",
+  "scores":[
+      5,
+      1,
+      2,
+      4,
+      5,
+      4,
+      5,
+      5,
+      4,
+      3
+    ]
+},
+{
+  "name":"Newman",
+  "photo":"https://en.wikipedia.org/wiki/Newman_(Seinfeld)",
+  "scores":[
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5
+    ]
+},
+{
+  "name":"Larry David",
+  "photo":"https://en.wikipedia.org/wiki/Larry_David",
+  "scores":[
+      2,
+      1,
+      4,
+      4,
+      5,
+      1,
+      2,
+      2,
+      5,
+      3
+    ]
+}
+]
+
+module.exports = friendData;
