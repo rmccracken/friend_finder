@@ -1,11 +1,11 @@
-let friendData = require("../data/friends");
+let friendData = require("../data/friends.js");
 
 module.exports = (app) => {
     app.get("api/friends", (req, res) => {
         res.json(friendData)
     });
 
-    app.post('/api/friends', (req, res) => {
+    app.post("/api/friends", (req, res) => {
      let newUser = req.body;
      let bestMatch = {};
 

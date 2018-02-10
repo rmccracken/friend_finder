@@ -163,8 +163,28 @@
         </select>
         <br>
         <br>
-        <button type="button" class="btn btn-primary" data-target="#myModal" id="submit">Submit</button>
+        <button type="submit" id="submit" class="btn btn-primary">Submit</button>
 
+        <div id="modalResults" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+      
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">X</button>
+                  <h2 class="modal-title"><strong>Your new friend is:</strong></h2>
+                </div>
+                <div class="modal-body">
+                  <h2 id="matchName"></h2>
+                  <img id="matchImgage" src ="" alt="" height="350" width="300">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" id="closeModal" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+      
+            </div>
+      
+          </div>
 
         <footer class="footer">
             <div class="container">
@@ -177,5 +197,42 @@
 
     </div>
 
+    <script>
+        let currentURL = window.location.origin;
+
+        $("#submit").on("click",  () => {
+
+            if (($('#name').val().trim() !== "") && ($('#pic').val().trim() !== "")) {
+
+                let userData = {
+                    name: $("#name").val(),
+                    pic: $("#pic").val(),
+                    scores: [$("#Q1").val(), $("#Q2").val(), $("#Q3").val(), $("#Q4").val(), $("#Q5").val(), $("#Q6").val(), $("#Q7").val(), $("#Q8").val(), $("#Q9").val(), $("#Q10").val(),]
+                }
+
+                $.post(currentURL + "/api/friends", userData,  (data) => {
+
+                    $("#matchName").text(data.name);
+                    $('#matchImgage').attr("src", data.pic);
+                    $("#modalResults").modal('toggle');
+                    $("#name").val("");
+                    $("#pic").val("");
+                });
+            } else {
+                $(".modal-title").text("Missing information");
+                $(".modal-body").html("<h4>Please complete  before submitting</h4>");
+                $("#modalResults").modal('toggle');
+            }
+            return false;
+        });
+
+        $('#closeModal').click( () => {
+            $.get('/', (req, res) => {
+                location.replace(res);
+            })
+        });
+    </script>
+
 </body>
+
 </html>

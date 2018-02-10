@@ -1,4 +1,4 @@
-let friendData = [
+let friends = [
 {
   "name":"Jerry Seinfeld",
   "photo":"https://en.wikipedia.org/wiki/Jerry_Seinfeld",
@@ -97,4 +97,4 @@ let friendData = [
 }
 ]
 
-module.exports = friendData;
+module.exports = friends;
